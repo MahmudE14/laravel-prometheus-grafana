@@ -2,6 +2,6 @@ global:
   scrape_interval: 15s
 
 scrape_configs:
-  - job_name: 'docker'
+  - job_name: 'cadvisor'
     static_configs:
-      - targets: ['app:8080', 'nginx:80', 'db:3306']
+      - targets: ['cadvisor:8081']
