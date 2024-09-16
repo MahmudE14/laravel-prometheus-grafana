@@ -83,6 +83,12 @@ services:
             - /var/lib/docker/:/var/lib/docker:ro
             - /sys:/sys:ro
             - /var/run:/var/run:ro
+    mysqld_exporter:
+        image: prom/mysqld-exporter
+        environment:
+            DATA_SOURCE_NAME: "sail:password@(mysql:3306)/laravel"
+        ports:
+            - "9104:9104"
 
 networks:
     sail:
